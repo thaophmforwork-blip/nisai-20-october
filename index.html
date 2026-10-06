@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Vietnamese Women's Day - 20 October</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    background:
+      radial-gradient(circle at 10% 10%, #fff1b8 0 7%, transparent 7.5%),
+      radial-gradient(circle at 90% 15%, #ffd4e5 0 8%, transparent 8.5%),
+      linear-gradient(135deg, #fff9f2, #fff4f8 48%, #f2f7ff);
+    color: #45384a;
+    min-height: 100vh;
+  }
+
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 70px 20px 55px;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 8vw, 78px);
+    line-height: .95;
+    margin: 10px 0;
+    color: #c94f7c;
+  }
+
+  .hero h1 span { color: #e79b35; }
+
+  .hero p {
+    max-width: 650px;
+    margin: 20px auto;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .sticker {
+    position: absolute;
+    font-size: 42px;
+    animation: float 4s ease-in-out infinite;
+  }
+  .s1 { left: 7%; top: 22%; }
+  .s2 { right: 8%; top: 18%; animation-delay: .8s; }
+  .s3 { left: 14%; bottom: 12%; animation-delay: 1.3s; }
+  .s4 { right: 15%; bottom: 10%; animation-delay: 2s; }
+
+  @keyframes float {
+    50% { transform: translateY(-10px) rotate(5deg); }
+  }
+
+  .section {
+    width: min(1100px, 92%);
+    margin: 0 auto 60px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #684b68;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    margin: 0 auto 28px;
+    color: #7e7180;
+  }
+
+  .message-box {
+    max-width: 720px;
+    margin: 0 auto 60px;
+    background: rgba(255,255,255,.9);
+    border: 2px solid #f5d7e3;
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 15px 40px rgba(113,76,98,.10);
+  }
+
+  input, textarea, select {
+    width: 100%;
+    border: 1px solid #eadce4;
+    border-radius: 14px;
+    padding: 13px 15px;
+    margin-bottom: 13px;
+    font: inherit;
+    color: #45384a;
+    background: #fffdfd;
+    outline: none;
+  }
+
+  textarea { min-height: 110px; resize: vertical; }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: #d77a9f;
+    box-shadow: 0 0 0 3px rgba(215,122,159,.12);
+  }
+
+  .button {
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 25px;
+    background: linear-gradient(135deg, #d85d8d, #e8a13d);
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: block;
+    margin: 4px auto 0;
+  }
+
+  .button:hover { transform: translateY(-2px); }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+
+  .card {
+    position: relative;
+    min-height: 260px;
+    padding: 25px 23px 22px;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(72,55,65,.12);
+    transform: rotate(var(--rotation));
+    transition: .25s ease;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    transform: rotate(0deg) translateY(-7px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(72,55,65,.18);
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 18px;
+    background: rgba(255,255,255,.62);
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    border-radius: 4px;
+  }
+
+  .pink { background: #ffdce9; }
+  .yellow { background: #fff0b7; }
+  .blue { background: #d9eff5; }
+  .green { background: #dff0d2; }
+  .lavender { background: #e8ddf5; }
+  .peach { background: #ffe0cc; }
+
+  .card-icon { font-size: 35px; margin: 10px 0 15px; }
+  .card h3 { margin: 0 0 10px; font-family: "Playfair Display", serif; font-size: 23px; }
+  .card p { line-height: 1.65; margin: 0 0 18px; font-size: 15px; }
+  .from { font-size: 13px; font-weight: 700; opacity: .65; }
+
+  .photo-strip {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .photo {
+    height: 190px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f4d9e4;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+  }
+
+  .photo:hover img { transform: scale(1.06); }
+
+  .note {
+    text-align: center;
+    margin: 25px auto 0;
+    font-size: 13px;
+    color: #8b7a88;
+  }
+
+  footer {
+    text-align: center;
+    padding: 35px 20px 50px;
+    color: #806d7c;
+    font-size: 14px;
+  }
+
+  @media (max-width: 650px) {
+    .hero { padding-top: 50px; }
+    .sticker { font-size: 28px; }
+    .photo-strip { grid-template-columns: 1fr; }
+    .photo { height: 180px; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="sticker s1">🌷</div>
+  <div class="sticker s2">🎀</div>
+  <div class="sticker s3">🌼</div>
+  <div class="sticker s4">💌</div>
+
+  <div>🌸 ✨ 💐 ✨ 🌸</div>
+  <h1>Happy <span>20 October</span></h1>
+  <p>
+    A little gallery of kind words, appreciation and lovely messages
+    for the wonderful women in our lives.
+  </p>
+</header>
+
+<section class="section">
+  <h2 class="section-title">Leave a Little Note 💌</h2>
+  <p class="section-subtitle">
+    Write a message for your mum, teacher, friend, sister, or someone special.
+  </p>
+
+  <div class="message-box">
+    <input id="name" type="text" placeholder="Your name">
+    <select id="style">
+      <option value="pink">🌷 Pink card</option>
+      <option value="yellow">🌼 Sunny card</option>
+      <option value="blue">🦋 Blue card</option>
+      <option value="green">🍀 Green card</option>
+      <option value="lavender">💜 Lavender card</option>
+      <option value="peach">🍑 Peach card</option>
+    </select>
+    <textarea id="message" maxlength="220"
+      placeholder="Write your 20/10 message here..."></textarea>
+    <button class="button" onclick="addMessage()">Add to the Gallery ✨</button>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Our 20/10 Gallery</h2>
+  <p class="section-subtitle">
+    Every message is a little piece of appreciation. 💐
+  </p>
+
+  <div class="gallery" id="gallery">
+
+    <article class="card pink" style="--rotation:-1.5deg">
+      <div class="card-icon">🌷</div>
+      <h3>To all the amazing women</h3>
+      <p>
+        Thank you for all the kindness, encouragement and little things
+        that make every day brighter. Happy 20/10!
+      </p>
+      <div class="from">— From the Nisai community</div>
+    </article>
+
+    <article class="card yellow" style="--rotation:1.2deg">
+      <div class="card-icon">🌻</div>
+      <h3>For my wonderful mum</h3>
+      <p>
+        Thank you for always believing in me, even when I don't believe
+        in myself. I love you!
+      </p>
+      <div class="from">— A grateful student</div>
+    </article>
+
+    <article class="card blue" style="--rotation:-1deg">
+      <div class="card-icon">🦋</div>
+      <h3>Dear teachers</h3>
+      <p>
+        Thank you for your patience, support and for making learning
+        a little more fun every day.
+      </p>
+      <div class="from">— With appreciation</div>
+    </article>
+
+    <article class="card green" style="--rotation:1.8deg">
+      <div class="card-icon">🌿</div>
+      <h3>Keep shining!</h3>
+      <p>
+        To every woman who is working hard, learning, creating and
+        helping others: you are doing an amazing job.
+      </p>
+      <div class="from">— Your Nisai friends</div>
+    </article>
+
+    <article class="card lavender" style="--rotation:-2deg">
+      <div class="card-icon">💜</div>
+      <h3>You are appreciated</h3>
+      <p>
+        Sometimes we forget to say it, so here is your reminder:
+        you matter, you are valued, and you are appreciated.
+      </p>
+      <div class="from">— Someone cheering for you</div>
+    </article>
+
+    <article class="card peach" style="--rotation:1deg">
+      <div class="card-icon">🌸</div>
+      <h3>Happy Women's Day!</h3>
+      <p>
+        Wishing you a day full of smiles, good moments and people who
+        remind you how wonderful you are.
+      </p>
+      <div class="from">— Happy 20/10!</div>
+    </article>
+
+  </div>
+
+  <div class="photo-strip">
+    <!-- Replace these image URLs with any copyright-safe images you choose. -->
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80" alt="Pink flowers">
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=700&q=80" alt="Flowers and leaves">
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=700&q=80" alt="Flower">
+    </div>
+  </div>
+
+  <p class="note">
+    Tip: You can replace the sample photos with your own Google-image
+    selections or school-approved images before publishing.
+  </p>
+</section>
+
+<footer>
+  Made with flowers, kind words and a little bit of sparkle 🌷
+  <br>
+  Nisai 20 October Campaign
+</footer>
+
+<script>
+  const icons = ["🌷", "🌸", "🌼", "💐", "🦋", "🎀", "💜", "✨"];
+  const rotations = [-2, -1, 1, 1.5, 2];
+
+  function addMessage() {
+    const name = document.getElementById("name").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const style = document.getElementById("style").value;
+
+    if (!name || !message) {
+      alert("Please add your name and message first!");
+      return;
+    }
+
+    const card = document.createElement("article");
+    card.className = `card ${style}`;
+    card.style.setProperty(
+      "--rotation",
+      rotations[Math.floor(Math.random() * rotations.length)] + "deg"
+    );
+
+    const icon = icons[Math.floor(Math.random() * icons.length)];
+
+    card.innerHTML = `
+      <div class="card-icon">${icon}</div>
+      <h3>A little 20/10 note</h3>
+      <p>${escapeHTML(message)}</p>
+      <div class="from">— ${escapeHTML(name)}</div>
+    `;
+
+    document.getElementById("gallery").prepend(card);
+
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+  }
+
+  function escapeHTML(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+</script>
+
+</body>
+</html>
